@@ -1,0 +1,43 @@
+<form [formGroup]="nestedForm">
+    <div formGroupName="personalInfo">
+      <label>
+        Name:
+        <input formControlName="name" />
+      </label>
+      <div *ngIf="nestedForm.get('personalInfo.name')?.invalid && nestedForm.get('personalInfo.name')?.touched">
+        Name is required and must be at least 3 characters.
+      </div>
+      <br />
+      <label>
+        Age:
+        <input formControlName="age" type="number" />
+      </label>
+      <div *ngIf="nestedForm.get('personalInfo.age')?.invalid && nestedForm.get('personalInfo.age')?.touched">
+        Age is required and must be 18 or older.
+      </div>
+    </div>
+    <br />
+    <div formGroupName="address">
+      <label>
+        City:
+        <input formControlName="city" />
+      </label>
+      <div *ngIf="nestedForm.get('address.city')?.invalid && nestedForm.get('address.city')?.touched">
+        City is required.
+      </div>
+      <br />
+      <label>
+        Zip Code:
+        <input formControlName="zipCode" />
+      </label>
+      <div *ngIf="nestedForm.get('address.zipCode')?.invalid && nestedForm.get('address.zipCode')?.touched">
+        Zip Code must be a 5-digit number.
+      </div>
+    </div>
+  
+    <button type="button" (click)="updateForm()">Update Form</button>
+  </form>
+  
+  <h3>Form Values:</h3>
+  <pre>{{ formValues | json }}</pre>
+  

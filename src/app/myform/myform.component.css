@@ -1,0 +1,28 @@
+form{
+    background-color: rgb(221, 177, 163);
+    width:50%;
+    margin: auto;
+    padding: 40px 0;
+    border-radius: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
+
+input{
+    margin-bottom: 15px;
+
+}
+
+button{
+    background-color: brown;
+    color:white;
+    border: 0;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: rgb(206, 85, 85);
+    cursor: pointer;
+}
